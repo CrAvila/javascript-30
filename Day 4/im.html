@@ -11,33 +11,28 @@
 
     <script>
 
-        const log = (content) => console.log(content);
+        let log = (content) => console.log(content);
     
     
 
-    const iM = {
-        release: 1980,
-        name: "Iron Maiden",
-        ratings : [4, 3.5, 3.5, 4.5, 4.5, 3, 3.5, 3.5, 5, 4, 4, 4]
-        
-    };
+  
 
-    const k = {
-        release: 1981,
-        name: "Killers",
-        ratings : [3,4,4.5,4,3.5,4,5,3.5,3.5,4.5,4,4,4]
-    };
+ 
+    
 
-    const tNOTB = {
-        release: 1982,
-        name: "The Number Of The Beast",
-        ratings : [4,4,4,4,5,5,4,5,3.5]
-    } 
+    let albums = [
+        { release: 1980, name: "Iron Maiden", ratings : [4, 3.5, 3.5, 4.5, 4.5, 3, 3.5, 3.5, 5, 4, 4, 4] },
+        { release: 1981, name: "Killers",ratings : [3,4,4.5,4,3.5,4,5,3.5,3.5,4.5,4,4,4]},
+        { release: 1982, name: "The Number Of The Beast",ratings : [4,4,4,4,5,5,4,5,3.5]},
+        ];
 
 
 
 
-    const getAverage = (album) => {
+    
+
+    let joinAverage = (album) => {
+
         let sum = 0;
         const l = album.ratings.length;
 
@@ -45,24 +40,24 @@
         sum += album.ratings[i];
     }
         let avg = (sum/l)*2;
-        return avg.toFixed(2);
         
-        
-    };
 
-    const joinAverage = (album) => {
-        average = getAverage(album);
+
+        average = avg.toFixed(2);
         album.average = average;
-        return `[${album.release}] - ${album.name}: ${album.average}`;
+        console.log(`[${album.release}] - ${album.name}: ${album.average}`);
     };
 
 
 
     
+ for ( i = 0; i < albums.length; i++) {
+     joinAverage(albums[i]);
+     };
 
-    log(joinAverage(iM));
-    log(joinAverage(k));
-    log(joinAverage(tNOTB));
+    
+
+    
     
     
 
