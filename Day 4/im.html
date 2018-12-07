@@ -15,23 +15,56 @@
     
     
 
-    const im = {
+    const iM = {
+        release: 1980,
         name: "Iron Maiden",
-        ratings = [4, 3.5, 3.5, 4.5, 4.5, 3, 3.5, 3.5, 5, 4, 4, 4]
+        ratings : [4, 3.5, 3.5, 4.5, 4.5, 3, 3.5, 3.5, 5, 4, 4, 4]
+        
     };
 
-    const average = (album) => {
+    const k = {
+        release: 1981,
+        name: "Killers",
+        ratings : [3,4,4.5,4,3.5,4,5,3.5,3.5,4.5,4,4,4]
+    };
 
+    const tNOTB = {
+        release: 1982,
+        name: "The Number Of The Beast",
+        ratings : [4,4,4,4,5,5,4,5,3.5]
+    } 
+
+
+
+
+    const getAverage = (album) => {
         let sum = 0;
-        for (i = 0; i < album.ratings.length; i++) {
-            sum += album.ratings[i];  
-        }
+        const l = album.ratings.length;
 
-        avg = (sum/album.ratings.length)*2;
-        return avg.toFixed(1);
+        for ( i = 0; i < l; i++){
+        sum += album.ratings[i];
     }
+        let avg = (sum/l)*2;
+        return avg.toFixed(2);
+        
+        
+    };
 
-    log(im.name);
+    const joinAverage = (album) => {
+        average = getAverage(album);
+        album.average = average;
+        return `[${album.release}] - ${album.name}: ${album.average}`;
+    };
+
+
+
+    
+
+    log(joinAverage(iM));
+    log(joinAverage(k));
+    log(joinAverage(tNOTB));
+    
+    
 
 
     
