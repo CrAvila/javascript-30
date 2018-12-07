@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Iron Maiden</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+</head>
+<body>
+
+    <script>
+
+        const log = (content) => console.log(content);
+    
+    
+
+    const im = {
+        name: "Iron Maiden",
+        ratings = [4, 3.5, 3.5, 4.5, 4.5, 3, 3.5, 3.5, 5, 4, 4, 4]
+    };
+
+    const average = (album) => {
+
+        let sum = 0;
+        for (i = 0; i < album.ratings.length; i++) {
+            sum += album.ratings[i];  
+        }
+
+        avg = (sum/album.ratings.length)*2;
+        return avg.toFixed(1);
+    }
+
+    log(im.name);
+
+
+    
+    </script>
+    
+</body>
+</html>
